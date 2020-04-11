@@ -1,0 +1,19 @@
+<main class="main">
+    <header class="cabecalho">
+        <nav *ngIf="naoLogado; else loginEfetuado">
+            <a mat-button routerLink="">Login</a>
+        </nav>
+        <ng-template #loginEfetuado>
+            <nav class="menu">
+                <a mat-button routerLink=".">Home</a>
+                <a mat-button routerLink="controle-estoque">Estoque</a>
+            </nav>
+        </ng-template>
+    </header>
+    <div class="conteudo">
+        <router-outlet></router-outlet>
+    </div>
+    <footer class="rodape">
+        footer
+    </footer>
+</main>

@@ -1,0 +1,16 @@
+.formLogin {
+    padding-top: 30px;
+        
+    mat-form-field {
+        width: 100%;
+    }
+    
+    .botao {
+        min-width: 100px;
+        margin-left: 10px;
+    
+        &-esqueci-senha {
+            text-decoration: underline;
+        }
+    }
+}

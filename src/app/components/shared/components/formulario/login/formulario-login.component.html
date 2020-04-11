@@ -1,0 +1,20 @@
+<form #form="ngForm" class="formLogin" (ngSubmit)="onSubmit()">
+   <mat-grid-list cols="4" rowHeight="1:1">
+      <mat-grid-tile colspan="4">
+         <mat-form-field appearance="legacy">
+            <mat-label>usuário</mat-label>
+            <input matInput name="usuario" id="usuario">
+         </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="4">
+         <mat-form-field appearance="legacy">
+            <mat-label>senha</mat-label>
+            <input matInput name="senha" id="senha" type="password">
+         </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="4">
+         <a mat-button routerLink="." class="botao botao-esqueci-senha">esqueci a senha</a>
+         <button mat-raised-button color="primary" class="botao">entrar</button>
+      </mat-grid-tile>
+   </mat-grid-list>
+</form>

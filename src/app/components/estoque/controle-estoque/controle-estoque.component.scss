@@ -1,0 +1,45 @@
+$cor-principal: #092EE8;
+$branco: #fff;
+
+.lista-estoque {
+    height: 100%;
+    
+    .tabela {
+        width: 100%;
+        height: 400px;
+    
+        tr.mat-header-row {
+            height: 50px;
+            line-height: 50px;
+        }
+
+        th.mat-header-cell {
+            font-size: 18px;
+            color: $branco;
+            background-color: $cor-principal;
+        }
+
+        tr.mat-row {
+            height: 36px;
+            line-height: 36px;
+
+            &:hover {
+                background-color: whitesmoke;
+            }
+        }
+
+        .mat-column-acoes {
+            width: 50px;
+
+            & .mat-icon {
+                vertical-align: middle;
+                cursor: pointer;
+            }
+        }
+    }
+
+    mat-paginator {
+        color: $branco;
+        background-color: $cor-principal;
+    }
+}
