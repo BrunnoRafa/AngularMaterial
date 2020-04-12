@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(event: Event): void {
+  onSubmit(): void {
     this.router.navigate(['controle-estoque']);
   }
 }

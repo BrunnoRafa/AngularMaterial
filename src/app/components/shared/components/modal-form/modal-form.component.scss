@@ -1,0 +1,30 @@
+.containerModal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 70px;
+    background: rgba(0, 0, 0, 0.5);
+
+    .modal {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .example-full-width {
+            width: 100%;
+        }
+
+        .mat-radio-button ~ .mat-radio-button {
+            margin-left: 16px;
+        }
+    }
+}

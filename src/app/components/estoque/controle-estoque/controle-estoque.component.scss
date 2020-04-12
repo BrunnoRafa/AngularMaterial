@@ -29,11 +29,31 @@ $branco: #fff;
         }
 
         .mat-column-acoes {
+            position: relative;
             width: 50px;
 
             & .mat-icon {
                 vertical-align: middle;
                 cursor: pointer;
+            }
+        
+            & .card-acoes {
+                position: absolute;
+                top: 0;
+                left: -110px;
+                width: 100px;
+                background-color: $branco;
+                padding: 5px;
+                line-height: 0;
+                z-index: 99;
+          
+                & .btn-acoes {
+                    width: 100%;
+
+                    &:nth-child(2) {
+                        margin-top: 5px;
+                    }
+                }
             }
         }
     }

@@ -1,0 +1,57 @@
+<div class="containerModal">
+    <mat-card class="modal">
+        <mat-card-header>
+            <mat-card-title>header</mat-card-title>
+            <mat-card-subtitle>header</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-grid-list cols="12" rowHeight="60px">
+                <!-- <app-campos></app-campos> -->
+                <mat-grid-tile [colspan]="4">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Favorite food</mat-label>
+                        <input matInput placeholder="Ex. Pizza" value="Sushi">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="2">
+                    <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button value="1">Option 1</mat-radio-button>
+                        <mat-radio-button value="2">Option 2</mat-radio-button>
+                    </mat-radio-group>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="3">
+                    <mat-form-field>
+                        <mat-label>Favorite food</mat-label>
+                        <mat-select>
+                          <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1">
+                    <mat-checkbox>Check me!</mat-checkbox>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="5">
+                    <mat-form-field class="example-full-width">
+                        <input type="text"
+                                placeholder="Pick one"
+                                aria-label="Number"
+                                matInput
+                                [formControl]="myControl"
+                                [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of options" [value]="option">
+                            {{option}}
+                        </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+        <mat-card-actions class="footer">
+            <button mat-button>footer</button>
+            <button mat-button (click)="fechar()">voltar</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

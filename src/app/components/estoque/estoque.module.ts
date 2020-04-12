@@ -4,8 +4,6 @@ import { CommonModule } from '@angular/common';
 import { EstoqueRoutingModule } from './estoque-routing.module';
 import { ControleEstoqueComponent } from './controle-estoque/controle-estoque.component';
 import { SharedModule } from '../shared/shared.module';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -14,10 +12,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   imports: [
     CommonModule,
     SharedModule,
-    EstoqueRoutingModule,
-
-    MatTableModule,
-    MatPaginatorModule
+    EstoqueRoutingModule
   ]
 })
 export class EstoqueModule { }

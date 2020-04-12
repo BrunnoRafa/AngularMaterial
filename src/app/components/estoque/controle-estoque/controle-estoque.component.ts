@@ -41,6 +41,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class ControleEstoqueComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'acoes'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  isCardAcoes = false;
+  codigoSelecionada = null;
+  listaAcoes: string[] = ['Grid', 'Form'];
+  isModalGrid = false;
+  isModalForm = false;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
@@ -48,4 +53,45 @@ export class ControleEstoqueComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
+  exibeCardAcoes(codigoProduto: string): boolean {
+    const codigo = +codigoProduto;
+
+    if (!this.codigoSelecionada) {
+      this.codigoSelecionada = codigo;
+      this.isCardAcoes = true;
+      return this.isCardAcoes;
+    }
+
+    if (this.codigoSelecionada === codigo) {
+      this.codigoSelecionada = null;
+      this.isCardAcoes = false;
+      return this.isCardAcoes;
+    }
+
+    this.codigoSelecionada = codigo;
+    this.isCardAcoes = true;
+    return this.isCardAcoes;
+  }
+
+  abrirModal(tipo: string): void {
+    this.isCardAcoes = false;
+    
+    switch (tipo) {
+      case 'Grid':
+          this.isModalGrid = true;
+        break;
+      case 'Form':
+          this.isModalForm = true;
+        break;
+    }
+    this.isCardAcoes = false;
+  }
+
+  fecharModalGrid(event: boolean): void {
+    this.isModalGrid = false;
+  }
+
+  fecharModalForm(event: boolean): void {
+    this.isModalForm = false;
+  }
 }

@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from '../shared/shared.module';
-import { FormularioModule } from '../shared/components/formulario/formulario.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +12,6 @@ import { FormularioModule } from '../shared/components/formulario/formulario.mod
   imports: [
     CommonModule,
     SharedModule,
-    FormularioModule,
     HomeRoutingModule
   ]
 })

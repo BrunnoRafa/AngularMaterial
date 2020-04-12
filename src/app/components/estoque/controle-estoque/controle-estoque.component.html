@@ -29,7 +29,20 @@
             <ng-container matColumnDef="acoes">
               <th mat-header-cell *matHeaderCellDef> Ações </th>
               <td mat-cell *matCellDef="let element">
-                <mat-icon>more_vert</mat-icon>
+                <mat-icon (click)="exibeCardAcoes(element.position)">
+                  more_vert
+                </mat-icon>
+                <mat-card 
+                  *ngIf="isCardAcoes && element.position == codigoSelecionada" 
+                  class="card-acoes">
+                  <button mat-button 
+                    class="btn-acoes" 
+                    *ngFor="let tipoAcaoBtn of listaAcoes"
+                    (click)="abrirModal(tipoAcaoBtn)"
+                    >
+                    {{ tipoAcaoBtn | uppercase }}
+                  </button>
+                </mat-card>
               </td>
             </ng-container>
         
@@ -40,3 +53,5 @@
         <mat-paginator [pageSizeOptions]="[10, 15, 20]" showFirstLastButtons></mat-paginator>
     </div>
 </app-area-conteudo>
+<app-modal-grid *ngIf="isModalGrid" (emiFecharModal)="fecharModalGrid($event)"></app-modal-grid>
+<app-modal-form *ngIf="isModalForm" (emiFecharModal)="fecharModalForm($event)"></app-modal-form>
