@@ -1,10 +1,15 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 
 @Component({
     selector: 'app-modal-form',
     templateUrl: 'modal-form.component.html',
-    styleUrls: ['modal-form.component.scss']
+    styleUrls: ['modal-form.component.scss'],
+    providers: [{
+        provide: MAT_RADIO_DEFAULT_OPTIONS,
+        useValue: { color: 'primary' },
+    }]
 })
 export class ModalFormComponent implements OnInit {
     myControl = new FormControl();
